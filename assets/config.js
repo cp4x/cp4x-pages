@@ -212,25 +212,33 @@ window.CP4X_CONFIG = {
 
     projects: [
 
-        {
-            name:
-                "Vitality's Hub",
+      {
+    name:
+        "Vitality's Hub",
 
-            status:
-                "Active Development",
+    status:
+        "Active Development",
 
-            color:
-                "#36ffa8",
+    color:
+        "#36ffa8",
 
-            description:
-                "A modular Lua project with a custom UI system, live-service architecture, and multiple game modules.",
+    description:
+        "A modular Lua project with a custom UI system, live-service architecture, and multiple game modules.",
 
-            stack: [
-                "Lua",
-                "UI",
-                "Live Services"
-            ]
-        },
+    stack: [
+        "Lua",
+        "UI",
+        "Live Services"
+    ],
+
+    button: {
+        text:
+            "Join Discord ↗",
+
+        url:
+            "https://discord.gg/JnEJw9UYst"
+    }
+},
 
         {
             name:
