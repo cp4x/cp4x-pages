@@ -1,4 +1,3 @@
-
 window.CP4X_CONFIG = {
 
     /*
@@ -8,7 +7,9 @@ window.CP4X_CONFIG = {
     */
 
     profile: {
-        name: "cp4x",
+
+        name:
+            "cp4x",
 
         tagline:
             "Developer • Creator • Building things",
@@ -16,22 +17,35 @@ window.CP4X_CONFIG = {
         description:
             "Building projects with Lua, Python, UI, and whatever else catches my attention.",
 
+
         socials: [
+
             {
-                name: "GitHub",
-                url: "https://github.com/cp4x"
+                name:
+                    "GitHub",
+
+                url:
+                    "https://github.com/cp4x"
             },
 
             {
-                name: "YouTube",
-                url: "https://www.youtube.com/@cp4.x"
+                name:
+                    "YouTube",
+
+                url:
+                    "https://www.youtube.com/@cp4.x"
             },
 
             {
-                name: "Development Discord",
-                url: "https://discord.gg/mes2W7prwf"
+                name:
+                    "Development Discord",
+
+                url:
+                    "https://discord.gg/mes2W7prwf"
             }
+
         ]
+
     },
 
 
@@ -40,27 +54,27 @@ window.CP4X_CONFIG = {
     CURRENT PROJECT
     ========================================================
 
-    STATUS COLORS:
+    STATUS COLORS
 
-    Green:
+    GREEN
     #36ffa8
 
-    Yellow:
+    YELLOW
     #ffd84d
 
-    Orange:
+    ORANGE
     #ff9f43
 
-    Red:
+    RED
     #ff4d5a
 
-    Blue:
+    BLUE
     #4da6ff
 
-    White:
+    WHITE
     #e8efec
 
-    Purple:
+    PURPLE
     #b678ff
     */
 
@@ -69,31 +83,42 @@ window.CP4X_CONFIG = {
         name:
             "Vitality's Hub",
 
+
         status: {
+
             text:
                 "Active Development",
 
             color:
                 "#36ffa8"
+
         },
+
 
         focus:
             "UI Library + Live Services",
 
+
         type:
             "Lua Development",
+
 
         description:
             "Currently improving the UI library, live-service architecture, module system, and overall developer experience.",
 
+
         stack: [
+
             "Lua",
             "Python",
             "UI",
             "Live Services"
+
         ],
 
+
         activity: {
+
             status:
                 "online",
 
@@ -105,6 +130,7 @@ window.CP4X_CONFIG = {
 
             build:
                 "development"
+
         }
 
     },
@@ -117,11 +143,13 @@ window.CP4X_CONFIG = {
     */
 
     cursor: {
+
         enabled:
             true,
 
         color:
             "#36ffa8"
+
     },
 
 
@@ -130,15 +158,11 @@ window.CP4X_CONFIG = {
     DEVELOPMENT LOG
     ========================================================
 
-    NEWEST UPDATE GOES FIRST.
+    NEWEST UPDATE MUST GO FIRST.
 
-    The first entry automatically controls:
+    The first update automatically controls:
 
-    "Last updated 14 seconds ago"
-
-    TIME EXAMPLE:
-
-    2026-09-18T12:30:00-04:00
+    "Last updated X seconds ago"
     */
 
     updates: [
@@ -157,11 +181,14 @@ window.CP4X_CONFIG = {
                 "Started restructuring the cp4x development portal into separate Home, Development, and Projects pages.",
 
             tags: [
+
                 "Website",
                 "GitHub Pages",
                 "UI"
+
             ]
         },
+
 
         {
             time:
@@ -177,10 +204,13 @@ window.CP4X_CONFIG = {
                 "Created the public development portal for showing what I am currently working on.",
 
             tags: [
+
                 "Website",
                 "cp4x"
+
             ]
         },
+
 
         {
             time:
@@ -196,8 +226,10 @@ window.CP4X_CONFIG = {
                 "Finished setting up my Discord Rich Presence with animated terminal artwork and development links.",
 
             tags: [
+
                 "Discord",
                 "RPC"
+
             ]
         }
 
@@ -208,37 +240,64 @@ window.CP4X_CONFIG = {
     ========================================================
     PROJECTS PAGE
     ========================================================
+
+    OPTIONAL PROJECT BUTTON:
+
+    Add this to any project:
+
+    button: {
+        text: "Join Discord ↗",
+        url: "https://..."
+    }
+
+    If "button" is not present,
+    no button will be displayed.
     */
 
     projects: [
 
-      {
-    name:
-        "Vitality's Hub",
+        {
+            name:
+                "Vitality's Hub",
 
-    status:
-        "Active Development",
+            status:
+                "Active Development",
 
-    color:
-        "#36ffa8",
+            color:
+                "#36ffa8",
 
-    description:
-        "A modular Lua project with a custom UI system, live-service architecture, and multiple game modules.",
+            description:
+                "A modular Lua project with a custom UI system, live-service architecture, and multiple game modules.",
 
-    stack: [
-        "Lua",
-        "UI",
-        "Live Services"
-    ],
+            stack: [
 
-    button: {
-        text:
-            "Join Discord ↗",
+                "Lua",
+                "UI",
+                "Live Services"
 
-        url:
-            "https://discord.gg/JnEJw9UYst"
-    }
-},
+            ],
+
+
+            /*
+            ----------------------------------------
+            VITALITY'S HUB DISCORD BUTTON
+            ----------------------------------------
+
+            Change this URL if Vitality has a
+            different Discord than your dev server.
+            */
+
+            button: {
+
+                text:
+                    "Join Discord ↗",
+
+                url:
+                    "https://discord.gg/mes2W7prwf"
+
+            }
+        },
+
 
         {
             name:
@@ -254,10 +313,17 @@ window.CP4X_CONFIG = {
                 "My personal development portal for projects, development updates, and social links.",
 
             stack: [
+
                 "HTML",
                 "CSS",
                 "JavaScript"
+
             ]
+
+            /*
+            No button here, so this project
+            will not display an action button.
+            */
         }
 
     ]
