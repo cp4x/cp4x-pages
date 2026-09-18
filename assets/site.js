@@ -49,46 +49,79 @@
     */
 
     const navItems = [
-        {
-            id: "home",
-            text: "~/home",
-            url: base
-        },
 
         {
-            id: "development",
-            text: "~/development",
-            url: base + "development/"
+            id:
+                "home",
+
+            text:
+                "~/home",
+
+            url:
+                base
         },
 
+
         {
-            id: "projects",
-            text: "~/projects",
-            url: base + "projects/"
+            id:
+                "development",
+
+            text:
+                "~/development",
+
+            url:
+                base + "development/"
+        },
+
+
+        {
+            id:
+                "projects",
+
+            text:
+                "~/projects",
+
+            url:
+                base + "projects/"
         }
+
     ];
 
 
-    navItems.forEach(item => {
+    navItems.forEach(
+        item => {
 
-        const a =
-            document.createElement("a");
-
-        a.href =
-            item.url;
-
-        a.textContent =
-            item.text;
+            const a =
+                document.createElement(
+                    "a"
+                );
 
 
-        if (item.id === page) {
-            a.classList.add("active");
+            a.href =
+                item.url;
+
+
+            a.textContent =
+                item.text;
+
+
+            if (
+                item.id === page
+            ) {
+
+                a.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            nav.appendChild(
+                a
+            );
+
         }
-
-
-        nav.appendChild(a);
-
-    });
+    );
 
 
     /*
@@ -101,10 +134,18 @@
 
         return `
             <div class="tags">
-                ${items.map(
-                    item =>
-                        `<span class="tag">${item}</span>`
-                ).join("")}
+
+                ${
+                    items.map(
+                        item =>
+                            `
+                            <span class="tag">
+                                ${item}
+                            </span>
+                            `
+                    ).join("")
+                }
+
             </div>
         `;
 
@@ -142,10 +183,13 @@
         content.innerHTML = `
 
             <div class="prompt">
+
                 dev@cp4x:~$
+
                 <span class="command">
                     whoami
                 </span>
+
             </div>
 
 
@@ -170,7 +214,9 @@
 
 
             <div class="actions">
+
                 ${socials()}
+
             </div>
 
 
@@ -200,9 +246,11 @@
                 </p>
 
 
-                ${tags(
-                    CONFIG.project.stack
-                )}
+                ${
+                    tags(
+                        CONFIG.project.stack
+                    )
+                }
 
 
                 <div class="actions">
@@ -239,9 +287,14 @@
 
                         ${
                             index === 0
-                                ? `<span class="latest">LATEST</span>`
+                                ? `
+                                    <span class="latest">
+                                        LATEST
+                                    </span>
+                                `
                                 : ""
                         }
+
 
                         <div class="log-date">
                             ${update.date}
@@ -258,9 +311,11 @@
                         </p>
 
 
-                        ${tags(
-                            update.tags
-                        )}
+                        ${
+                            tags(
+                                update.tags
+                            )
+                        }
 
                     </article>
 
@@ -271,10 +326,13 @@
         content.innerHTML = `
 
             <div class="prompt">
+
                 dev@cp4x:~$
+
                 <span class="command">
                     current-project
                 </span>
+
             </div>
 
 
@@ -298,6 +356,7 @@
 
 
             <div class="cards">
+
 
                 <div class="card">
 
@@ -350,6 +409,7 @@
 
                 </div>
 
+
             </div>
 
 
@@ -359,13 +419,17 @@
                     About
                 </div>
 
+
                 <p class="subtitle">
                     ${CONFIG.project.description}
                 </p>
 
-                ${tags(
-                    CONFIG.project.stack
-                )}
+
+                ${
+                    tags(
+                        CONFIG.project.stack
+                    )
+                }
 
             </div>
 
@@ -378,37 +442,50 @@
 
 
                 <div class="activity-line">
+
                     status:
+
                     <span class="activity-value">
                         ${CONFIG.project.activity.status}
                     </span>
+
                 </div>
 
 
                 <div class="activity-line">
+
                     working_on:
+
                     <span class="activity-value">
                         ${CONFIG.project.activity.workingOn}
                     </span>
+
                 </div>
 
 
                 <div class="activity-line">
+
                     next:
+
                     <span class="activity-value">
                         ${CONFIG.project.activity.next}
                     </span>
+
                 </div>
 
 
                 <div class="activity-line">
+
                     build:
+
                     <span class="activity-value">
                         ${CONFIG.project.activity.build}
                     </span>
 
                     <span class="blink"></span>
+
                 </div>
+
 
             </div>
 
@@ -422,6 +499,7 @@
                         <div class="eyebrow">
                             Development Log
                         </div>
+
 
                         <h2>
                             Latest Updates
@@ -441,7 +519,9 @@
 
 
                 <div class="log-list">
+
                     ${updates}
+
                 </div>
 
             </section>
@@ -474,18 +554,49 @@
                         "
                     >
 
-                        <div class="status">
 
-                            <span class="status-dot"></span>
+                        <div class="project-card-top">
 
-                            ${project.status}
+
+                            <div class="project-card-heading">
+
+
+                                <div class="status">
+
+                                    <span class="status-dot"></span>
+
+                                    ${project.status}
+
+                                </div>
+
+
+                                <h2>
+                                    ${project.name}
+                                </h2>
+
+
+                            </div>
+
+
+                            ${
+                                project.button
+                                    ? `
+
+                                        <a
+                                            class="project-action"
+                                            href="${project.button.url}"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            ${project.button.text}
+                                        </a>
+
+                                    `
+                                    : ""
+                            }
+
 
                         </div>
-
-
-                        <h2>
-                            ${project.name}
-                        </h2>
 
 
                         <p class="subtitle">
@@ -493,9 +604,12 @@
                         </p>
 
 
-                        ${tags(
-                            project.stack
-                        )}
+                        ${
+                            tags(
+                                project.stack
+                            )
+                        }
+
 
                     </article>
 
@@ -506,10 +620,13 @@
         content.innerHTML = `
 
             <div class="prompt">
+
                 dev@cp4x:~$
+
                 <span class="command">
                     ls ./projects
                 </span>
+
             </div>
 
 
@@ -524,13 +641,17 @@
 
 
             <p class="subtitle">
+
                 Current projects, experiments,
                 and things I've worked on.
+
             </p>
 
 
             <div class="project-list">
+
                 ${projects}
+
             </div>
 
         `;
@@ -546,8 +667,12 @@
 
     function startLastUpdated() {
 
-        if (!CONFIG.updates.length) {
+        if (
+            !CONFIG.updates.length
+        ) {
+
             return;
+
         }
 
 
@@ -555,6 +680,15 @@
             document.getElementById(
                 "lastUpdated"
             );
+
+
+        if (
+            !output
+        ) {
+
+            return;
+
+        }
 
 
         const date =
@@ -584,19 +718,29 @@
             let result;
 
 
-            if (seconds < 5) {
+            if (
+                seconds < 5
+            ) {
 
                 result =
                     "just now";
 
             }
 
-            else if (seconds < 60) {
+
+            else if (
+                seconds < 60
+            ) {
 
                 result =
-                    `${seconds} seconds ago`;
+                    `${seconds} second${
+                        seconds === 1
+                            ? ""
+                            : "s"
+                    } ago`;
 
             }
+
 
             else {
 
@@ -606,7 +750,9 @@
                     );
 
 
-                if (minutes < 60) {
+                if (
+                    minutes < 60
+                ) {
 
                     result =
                         `${minutes} minute${
@@ -617,6 +763,7 @@
 
                 }
 
+
                 else {
 
                     const hours =
@@ -625,7 +772,9 @@
                         );
 
 
-                    if (hours < 24) {
+                    if (
+                        hours < 24
+                    ) {
 
                         result =
                             `${hours} hour${
@@ -636,6 +785,7 @@
 
                     }
 
+
                     else {
 
                         const days =
@@ -644,12 +794,60 @@
                             );
 
 
-                        result =
-                            `${days} day${
-                                days === 1
-                                    ? ""
-                                    : "s"
-                            } ago`;
+                        if (
+                            days < 30
+                        ) {
+
+                            result =
+                                `${days} day${
+                                    days === 1
+                                        ? ""
+                                        : "s"
+                                } ago`;
+
+                        }
+
+
+                        else {
+
+                            const months =
+                                Math.floor(
+                                    days / 30
+                                );
+
+
+                            if (
+                                months < 12
+                            ) {
+
+                                result =
+                                    `${months} month${
+                                        months === 1
+                                            ? ""
+                                            : "s"
+                                    } ago`;
+
+                            }
+
+
+                            else {
+
+                                const years =
+                                    Math.floor(
+                                        days / 365
+                                    );
+
+
+                                result =
+                                    `${years} year${
+                                        years === 1
+                                            ? ""
+                                            : "s"
+                                    } ago`;
+
+                            }
+
+                        }
 
                     }
 
@@ -661,6 +859,10 @@
             output.textContent =
                 "Last updated " +
                 result;
+
+
+            output.title =
+                date.toLocaleString();
 
         }
 
@@ -690,7 +892,9 @@
                 "(pointer: fine)"
             ).matches
         ) {
+
             return;
+
         }
 
 
@@ -709,6 +913,16 @@
             document.querySelector(
                 ".cursor-ring"
             );
+
+
+        if (
+            !dot ||
+            !ring
+        ) {
+
+            return;
+
+        }
 
 
         let x = 0;
@@ -746,16 +960,48 @@
         );
 
 
+        document.addEventListener(
+            "mouseleave",
+            () => {
+
+                dot.style.opacity =
+                    "0";
+
+                ring.style.opacity =
+                    "0";
+
+            }
+        );
+
+
+        document.addEventListener(
+            "mouseenter",
+            () => {
+
+                dot.style.opacity =
+                    "1";
+
+                ring.style.opacity =
+                    ".55";
+
+            }
+        );
+
+
         function animate() {
 
             ringX +=
-                (x - ringX) *
-                0.16;
+                (
+                    x -
+                    ringX
+                ) * 0.16;
 
 
             ringY +=
-                (y - ringY) *
-                0.16;
+                (
+                    y -
+                    ringY
+                ) * 0.16;
 
 
             ring.style.left =
@@ -823,7 +1069,10 @@
     ========================================================
     */
 
-    switch (page) {
+    switch (
+        page
+    ) {
+
 
         case "development":
 
