@@ -293,7 +293,7 @@ window.CP4X_CONFIG = {
                     "Join Discord ↗",
 
                 url:
-                    "https://discord.gg/mes2W7prwf"
+                    "https://discord.gg/JnEJw9UYst"
 
             }
         },
